@@ -3,5 +3,7 @@ export const color = {
 
     black: '#000000',
 
-    purple: '#604B93'
+    purple: '#604B93',
+
+    lightgray: '#EEEEEE'
 }
