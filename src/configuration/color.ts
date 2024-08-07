@@ -5,5 +5,7 @@ export const color = {
 
     purple: '#604B93',
 
+    gray: '#91979D',
+
     lightgray: '#EEEEEE'
 }
