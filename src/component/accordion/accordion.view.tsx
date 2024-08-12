@@ -2,10 +2,10 @@ import { useAccordionHorizontal, useAccordionVertical } from './accordion.hook'
 import { AccordionStyle } from './accordion.style'
 
 export function AccordionHorizontal() {
-    const { states, events } = useAccordionHorizontal()
+    const { refs, events } = useAccordionHorizontal()
 
     return (
-        <AccordionStyle.Horizontal.Container ref={states.containerRef}>
+        <AccordionStyle.Horizontal.Container ref={refs.containerRef}>
             {[...Array(2)].map((number, index) => (
                 <AccordionStyle.Horizontal.SafetyContainer
                     key={index}
@@ -15,7 +15,7 @@ export function AccordionHorizontal() {
                     <AccordionStyle.Horizontal.Title>Lorem</AccordionStyle.Horizontal.Title>
                     <AccordionStyle.Horizontal.Contents.Container
                         ref={(element) => {
-                            states.contentsRef.current[index] = element!
+                            refs.contentsRef.current[index] = element!
                         }}
                     >
                         <AccordionStyle.Horizontal.Contents.Text>
@@ -29,7 +29,7 @@ export function AccordionHorizontal() {
 }
 
 export function AccordionVertical() {
-    const { states, events } = useAccordionVertical()
+    const { refs, events } = useAccordionVertical()
 
     return (
         <AccordionStyle.Vertical.Container>
@@ -42,12 +42,12 @@ export function AccordionVertical() {
                     <AccordionStyle.Vertical.Title>Lorem</AccordionStyle.Vertical.Title>
                     <AccordionStyle.Vertical.Contents.Container
                         ref={(element) => {
-                            states.contentsRef.current[index] = element!
+                            refs.contentsRef.current[index] = element!
                         }}
                     >
                         <AccordionStyle.Vertical.Contents.Text
                             ref={(element) => {
-                                states.textRef.current[index] = element!
+                                refs.textRef.current[index] = element!
                             }}
                         >
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit.

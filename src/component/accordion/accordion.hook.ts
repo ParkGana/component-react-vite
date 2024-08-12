@@ -24,7 +24,7 @@ export function useAccordionHorizontal() {
     }
 
     return {
-        states: {
+        refs: {
             containerRef,
             contentsRef
         },
@@ -54,7 +54,7 @@ export function useAccordionVertical() {
     }
 
     return {
-        states: {
+        refs: {
             contentsRef,
             textRef
         },

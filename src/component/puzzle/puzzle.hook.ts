@@ -1,13 +1,13 @@
-import { DragEvent, useState } from 'react'
+import { DragEvent } from 'react'
 
 export function usePuzzle() {
-    const [moveId, setMoveId] = useState<string>('')
-    const [moveSrc, setMoveSrc] = useState<string>('')
+    let moveId: string
+    let moveSrc: string
 
     /* drag 이벤트 */
     const onDragItem = (e: DragEvent<HTMLImageElement>) => {
-        setMoveId(e.currentTarget.id)
-        setMoveSrc(e.currentTarget.src)
+        moveId = e.currentTarget.id
+        moveSrc = e.currentTarget.src
     }
 
     /* drop 이벤트 */
