@@ -4,6 +4,7 @@ import { Button } from '@/src/component/button/button.view'
 import { Item } from '@/src/component/common/item/item.view'
 import { SelectBox } from '@/src/component/select-box/select-box.view'
 import { CheckBox } from '@/src/component/check-box/check-box.view'
+import { Radio } from '@/src/component/radio/radio.view'
 
 export function ElementSection() {
     const { state, event } = useElement()
@@ -23,6 +24,17 @@ export function ElementSection() {
                         ['check-3', '카라반']
                     ]}
                     checkCallback={event.onCheckOption}
+                />
+            </Item>
+
+            <Item title={'RADIO'}>
+                <Radio
+                    options={[
+                        ['radio-1', '글램핑'],
+                        ['radio-2', '오토'],
+                        ['radio-3', '카라반']
+                    ]}
+                    choiceCallback={event.onChoiceOption}
                 />
             </Item>
 
