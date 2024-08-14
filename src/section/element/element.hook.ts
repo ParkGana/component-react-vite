@@ -8,6 +8,15 @@ export function useElement() {
 
     /****************************************************************************************************/
 
+    const [checked, setChecked] = useState<string[]>([])
+
+    /* CHECK BOX 선택 이벤트 */
+    const onCheckOption = (value: string[]) => {
+        setChecked(value)
+    }
+
+    /****************************************************************************************************/
+
     const [selected, setSelected] = useState<string>('응원하는 구단을 선택해 주세요.')
 
     /* SELECT BOX 선택 이벤트 */
@@ -17,10 +26,12 @@ export function useElement() {
 
     return {
         state: {
+            checked,
             selected
         },
         event: {
             onClickButton,
+            onCheckOption,
             onSelectOption
         }
     }

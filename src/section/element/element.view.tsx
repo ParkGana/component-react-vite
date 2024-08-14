@@ -3,6 +3,7 @@ import { useElement } from './element.hook'
 import { Button } from '@/src/component/button/button.view'
 import { Item } from '@/src/component/common/item/item.view'
 import { SelectBox } from '@/src/component/select-box/select-box.view'
+import { CheckBox } from '@/src/component/check-box/check-box.view'
 
 export function ElementSection() {
     const { state, event } = useElement()
@@ -11,6 +12,18 @@ export function ElementSection() {
         <Category title={'ELEMENT'}>
             <Item title={'BUTTON'}>
                 <Button clickCallback={event.onClickButton} />
+            </Item>
+
+            <Item title={'CHECK BOX'}>
+                <CheckBox
+                    checked={state.checked}
+                    options={[
+                        ['check-1', '글램핑'],
+                        ['check-2', '오토'],
+                        ['check-3', '카라반']
+                    ]}
+                    checkCallback={event.onCheckOption}
+                />
             </Item>
 
             <Item title={'SELECT BOX'}>
