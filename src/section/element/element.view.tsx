@@ -5,6 +5,7 @@ import { Item } from '@/src/component/common/item/item.view'
 import { SelectBox } from '@/src/component/select-box/select-box.view'
 import { CheckBox } from '@/src/component/check-box/check-box.view'
 import { Radio } from '@/src/component/radio/radio.view'
+import { Search } from '@/src/component/search/search.view'
 
 export function ElementSection() {
     const { state, event } = useElement()
@@ -36,6 +37,10 @@ export function ElementSection() {
                     ]}
                     choiceCallback={event.onChoiceOption}
                 />
+            </Item>
+
+            <Item title={'SEARCH'}>
+                <Search keyword={state.keyword} changeCallback={event.onChangeKeyword} />
             </Item>
 
             <Item title={'SELECT BOX'}>

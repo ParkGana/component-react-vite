@@ -26,6 +26,15 @@ export function useElement() {
 
     /****************************************************************************************************/
 
+    const [keyword, setKeyword] = useState<string>('')
+
+    /* SEARCH 값 변경 이벤트 */
+    const onChangeKeyword = (value: string) => {
+        setKeyword(value)
+    }
+
+    /****************************************************************************************************/
+
     const [selected, setSelected] = useState<string>('응원하는 구단을 선택해 주세요.')
 
     /* SELECT BOX 선택 이벤트 */
@@ -37,12 +46,14 @@ export function useElement() {
         state: {
             checked,
             choiced,
+            keyword,
             selected
         },
         event: {
             onClickButton,
             onCheckOption,
             onChoiceOption,
+            onChangeKeyword,
             onSelectOption
         }
     }
