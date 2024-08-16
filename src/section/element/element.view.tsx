@@ -1,11 +1,11 @@
 import { Category } from '@/src/component/common/category/category.view'
 import { useElement } from './element.hook'
-import { Button } from '@/src/component/button/button.view'
+import { Button } from '@/src/component/element/button/button.view'
 import { Item } from '@/src/component/common/item/item.view'
-import { SelectBox } from '@/src/component/select-box/select-box.view'
-import { CheckBox } from '@/src/component/check-box/check-box.view'
-import { Radio } from '@/src/component/radio/radio.view'
-import { Search } from '@/src/component/search/search.view'
+import { SelectBox } from '@/src/component/element/select-box/select-box.view'
+import { CheckBox } from '@/src/component/element/check-box/check-box.view'
+import { Radio } from '@/src/component/element/radio/radio.view'
+import { Search } from '@/src/component/element/search/search.view'
 
 export function ElementSection() {
     const { state, event } = useElement()
