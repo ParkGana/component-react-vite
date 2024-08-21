@@ -1,14 +1,14 @@
-import { Category } from '@/src/component/common/category/category.view'
 import { useElement } from './element.hook'
-import { Button } from '@/src/component/element/button/button.view'
-import { Item } from '@/src/component/common/item/item.view'
-import { SelectBox } from '@/src/component/element/select-box/select-box.view'
-import { CheckBox } from '@/src/component/element/check-box/check-box.view'
-import { Radio } from '@/src/component/element/radio/radio.view'
-import { Search } from '@/src/component/element/search/search.view'
-import { List } from '@/src/component/element/pagination/list/list.view'
-import { Pagination } from '@/src/component/element/pagination/pagination.view'
 import { ListData } from './element.data'
+import { Category } from '../../component/common/category/category.view'
+import { Item } from '../../component/common/item/item.view'
+import { Button } from '../../component/element/button/button.view'
+import { CheckBox } from '../../component/element/check-box/check-box.view'
+import { List } from '../../component/element/pagination/list/list.view'
+import { Pagination } from '../../component/element/pagination/pagination.view'
+import { Radio } from '../../component/element/radio/radio.view'
+import { Search } from '../../component/element/search/search.view'
+import { SelectBox } from '../../component/element/select-box/select-box.view'
 
 export function ElementSection() {
     const { state, event } = useElement()

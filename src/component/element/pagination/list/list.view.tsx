@@ -1,4 +1,4 @@
-import { ListStyle } from './list.style'
+import { Container, SafetyContainer, Text } from './list.style'
 
 export function List({
     postList,
@@ -10,24 +10,24 @@ export function List({
     nowPage: number
 }) {
     return (
-        <ListStyle.Container>
-            <ListStyle.SafetyContainer type={'title'} view>
-                <ListStyle.Text>No.</ListStyle.Text>
-                <ListStyle.Text>Title</ListStyle.Text>
-                <ListStyle.Text>Writer</ListStyle.Text>
-            </ListStyle.SafetyContainer>
+        <Container>
+            <SafetyContainer type={'title'} view>
+                <Text>No.</Text>
+                <Text>Title</Text>
+                <Text>Writer</Text>
+            </SafetyContainer>
 
             {postList.map((item, index) => (
-                <ListStyle.SafetyContainer
+                <SafetyContainer
                     key={index}
                     type={'contents'}
                     view={index >= (nowPage - 1) * postCount && index <= (nowPage - 1) * postCount + postCount - 1}
                 >
-                    <ListStyle.Text>{item[0]}</ListStyle.Text>
-                    <ListStyle.Text>{item[1]}</ListStyle.Text>
-                    <ListStyle.Text>{item[2]}</ListStyle.Text>
-                </ListStyle.SafetyContainer>
+                    <Text>{item[0]}</Text>
+                    <Text>{item[1]}</Text>
+                    <Text>{item[2]}</Text>
+                </SafetyContainer>
             ))}
-        </ListStyle.Container>
+        </Container>
     )
 }

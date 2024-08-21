@@ -1,5 +1,5 @@
 import { useSelectBox } from './select-box.hook'
-import { SelectBoxStyle } from './select-box.style'
+import { Arrow, Container, OptionContainer, OptionSafetyContainer, Selected } from './select-box.style'
 
 export function SelectBox({
     selected,
@@ -13,20 +13,20 @@ export function SelectBox({
     const { states, refs, events } = useSelectBox(selectCallback)
 
     return (
-        <SelectBoxStyle.Container ref={refs.ref} onClick={events.onToggleSelect}>
-            <SelectBoxStyle.Selected>{selected}</SelectBoxStyle.Selected>
-            <SelectBoxStyle.Arrow src={`/icons/select-${states.isOpen ? 'up' : 'down'}.png`} alt="icon" />
-            <SelectBoxStyle.Option.Container isOpen={states.isOpen}>
+        <Container ref={refs.ref} onClick={events.onToggleSelect}>
+            <Selected>{selected}</Selected>
+            <Arrow src={`/icon/select-${states.isOpen ? 'up' : 'down'}.png`} alt="icon" />
+            <OptionContainer isOpen={states.isOpen}>
                 {options.map((option, index) => (
-                    <SelectBoxStyle.Option.SafetyContainer
+                    <OptionSafetyContainer
                         key={index}
                         isSelected={selected === option}
                         onClick={() => events.onSelectOption(option)}
                     >
                         {option}
-                    </SelectBoxStyle.Option.SafetyContainer>
+                    </OptionSafetyContainer>
                 ))}
-            </SelectBoxStyle.Option.Container>
-        </SelectBoxStyle.Container>
+            </OptionContainer>
+        </Container>
     )
 }

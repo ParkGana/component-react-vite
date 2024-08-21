@@ -1,6 +1,5 @@
-import React from 'react'
-import { RadioStyle } from './radio.style'
 import { useRadio } from './radio.hook'
+import { Container, Input, SafetyContainer, Text } from './radio.style'
 
 export function Radio({
     options,
@@ -12,19 +11,19 @@ export function Radio({
     const { events } = useRadio(choiceCallback)
 
     return (
-        <RadioStyle.Container>
+        <Container>
             {options.map((option, index) => (
-                <RadioStyle.SafetyContainer key={index}>
-                    <RadioStyle.Input
+                <SafetyContainer key={index}>
+                    <Input
                         type="radio"
                         id={option[0]}
                         name="radio"
                         value={option[1]}
                         onClick={() => events.onChoiceOption(option[1])}
                     />
-                    <RadioStyle.Text htmlFor={option[0]}>{option[1]}</RadioStyle.Text>
-                </RadioStyle.SafetyContainer>
+                    <Text htmlFor={option[0]}>{option[1]}</Text>
+                </SafetyContainer>
             ))}
-        </RadioStyle.Container>
+        </Container>
     )
 }

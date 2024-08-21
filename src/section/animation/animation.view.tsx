@@ -1,9 +1,9 @@
-import { AccordionHorizontal, AccordionVertical } from '@/src/component/animation/accordion/accordion.view'
-import { Category } from '@/src/component/common/category/category.view'
-import { Item } from '@/src/component/common/item/item.view'
-import { FollowCursor } from '@/src/component/animation/follow-cursor/follow-cursor.view'
-import { Puzzle } from '@/src/component/animation/puzzle/puzzle.view'
-import { SwitchSection } from '@/src/component/animation/switch-section/switch-section.view'
+import { AccordionHorizontal, AccordionVertical } from '../../component/animation/accordion/accordion.view'
+import { FollowCursor } from '../../component/animation/follow-cursor/follow-cursor.view'
+import { Puzzle } from '../../component/animation/puzzle/puzzle.view'
+import { SwitchSection } from '../../component/animation/switch-section/switch-section.view'
+import { Category } from '../../component/common/category/category.view'
+import { Item } from '../../component/common/item/item.view'
 
 export function AnimationSection() {
     return (

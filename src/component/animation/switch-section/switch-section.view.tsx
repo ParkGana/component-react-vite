@@ -1,18 +1,18 @@
 import { useSwitchSection } from './switch-section.hook'
-import { SwitchSectionStyle } from './switch-section.style'
+import { Container, SafetyContainer, Section } from './switch-section.style'
 
 export function SwitchSection() {
     useSwitchSection(5)
 
     return (
-        <SwitchSectionStyle.Container>
-            <SwitchSectionStyle.SafetyContainer id="switch-section-container">
-                {[...Array(5)].map((num, index) => (
-                    <SwitchSectionStyle.Section key={index} className="switch-section-page">
+        <Container>
+            <SafetyContainer id="switch-section-container">
+                {[...Array(5)].map((_, index) => (
+                    <Section key={index} className="switch-section-page">
                         {index + 1}
-                    </SwitchSectionStyle.Section>
+                    </Section>
                 ))}
-            </SwitchSectionStyle.SafetyContainer>
-        </SwitchSectionStyle.Container>
+            </SafetyContainer>
+        </Container>
     )
 }

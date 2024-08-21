@@ -1,30 +1,41 @@
 import { useAccordionHorizontal, useAccordionVertical } from './accordion.hook'
-import { AccordionStyle } from './accordion.style'
+import {
+    HorizontalContainer,
+    HorizontalContentsContainer,
+    HorizontalContentsText,
+    HorizontalSafetyContainer,
+    HorizontalTitle,
+    VerticalContainer,
+    VerticalContentsContainer,
+    VerticalContentsText,
+    VerticalSafetyContainer,
+    VerticalTitle
+} from './accordion.style'
 
 export function AccordionHorizontal() {
     const { refs, events } = useAccordionHorizontal()
 
     return (
-        <AccordionStyle.Horizontal.Container ref={refs.containerRef}>
-            {[...Array(2)].map((number, index) => (
-                <AccordionStyle.Horizontal.SafetyContainer
+        <HorizontalContainer ref={refs.containerRef}>
+            {[...Array(2)].map((_, index) => (
+                <HorizontalSafetyContainer
                     key={index}
                     onMouseEnter={() => events.onEnterItem(index)}
                     onMouseLeave={() => events.onLeaveItem(index)}
                 >
-                    <AccordionStyle.Horizontal.Title>Lorem</AccordionStyle.Horizontal.Title>
-                    <AccordionStyle.Horizontal.Contents.Container
+                    <HorizontalTitle>Lorem</HorizontalTitle>
+                    <HorizontalContentsContainer
                         ref={(element) => {
                             refs.contentsRef.current[index] = element!
                         }}
                     >
-                        <AccordionStyle.Horizontal.Contents.Text>
+                        <HorizontalContentsText>
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        </AccordionStyle.Horizontal.Contents.Text>
-                    </AccordionStyle.Horizontal.Contents.Container>
-                </AccordionStyle.Horizontal.SafetyContainer>
+                        </HorizontalContentsText>
+                    </HorizontalContentsContainer>
+                </HorizontalSafetyContainer>
             ))}
-        </AccordionStyle.Horizontal.Container>
+        </HorizontalContainer>
     )
 }
 
@@ -32,29 +43,29 @@ export function AccordionVertical() {
     const { refs, events } = useAccordionVertical()
 
     return (
-        <AccordionStyle.Vertical.Container>
-            {[...Array(2)].map((number, index) => (
-                <AccordionStyle.Vertical.SafetyContainer
+        <VerticalContainer>
+            {[...Array(2)].map((_, index) => (
+                <VerticalSafetyContainer
                     key={index}
                     onMouseEnter={() => events.onEnterItem(index)}
                     onMouseLeave={() => events.onLeaveItem(index)}
                 >
-                    <AccordionStyle.Vertical.Title>Lorem</AccordionStyle.Vertical.Title>
-                    <AccordionStyle.Vertical.Contents.Container
+                    <VerticalTitle>Lorem</VerticalTitle>
+                    <VerticalContentsContainer
                         ref={(element) => {
                             refs.contentsRef.current[index] = element!
                         }}
                     >
-                        <AccordionStyle.Vertical.Contents.Text
+                        <VerticalContentsText
                             ref={(element) => {
                                 refs.textRef.current[index] = element!
                             }}
                         >
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        </AccordionStyle.Vertical.Contents.Text>
-                    </AccordionStyle.Vertical.Contents.Container>
-                </AccordionStyle.Vertical.SafetyContainer>
+                        </VerticalContentsText>
+                    </VerticalContentsContainer>
+                </VerticalSafetyContainer>
             ))}
-        </AccordionStyle.Vertical.Container>
+        </VerticalContainer>
     )
 }

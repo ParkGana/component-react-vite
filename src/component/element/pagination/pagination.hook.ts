@@ -54,7 +54,7 @@ export function usePagination(
         if (pageList.length > 0) {
             let count = 0
 
-            pageList.forEach((page, index) => {
+            pageList.forEach((_, index) => {
                 if (index >= (group - 1) * pageCount && index <= group * pageCount - 1) {
                     count++
                 }

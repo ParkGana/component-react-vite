@@ -1,5 +1,5 @@
 import { usePagination } from './pagination.hook'
-import { PaginationStyle } from './pagination.style'
+import { Arrow, Container, Page } from './pagination.style'
 
 export function Pagination({
     pageCount,
@@ -19,15 +19,10 @@ export function Pagination({
     const { states, events } = usePagination(pageCount, totalPage, nowPage, nowGroup, clickCallback, changeCallback)
 
     return (
-        <PaginationStyle.Container columnCount={states.columnCount}>
-            <PaginationStyle.Arrow
-                src="/icons/pagination-prev.png"
-                disable={nowPage === 1}
-                onClick={events.onClickPrev}
-                alt="icon"
-            />
-            {[...Array(totalPage)].map((item, index) => (
-                <PaginationStyle.Page
+        <Container columnCount={states.columnCount}>
+            <Arrow src="/icon/pagination-prev.png" disable={nowPage === 1} onClick={events.onClickPrev} alt="icon" />
+            {[...Array(totalPage)].map((_, index) => (
+                <Page
                     key={index}
                     className="pagination-page"
                     view={index >= (nowGroup - 1) * pageCount && index <= nowGroup * pageCount - 1}
@@ -35,14 +30,14 @@ export function Pagination({
                     onClick={() => events.onClickPage(index + 1)}
                 >
                     {index + 1}
-                </PaginationStyle.Page>
+                </Page>
             ))}
-            <PaginationStyle.Arrow
-                src="/icons/pagination-next.png"
+            <Arrow
+                src="/icon/pagination-next.png"
                 disable={nowPage === totalPage}
                 onClick={events.onClickNext}
                 alt="icon"
             />
-        </PaginationStyle.Container>
+        </Container>
     )
 }

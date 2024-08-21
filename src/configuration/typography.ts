@@ -1,4 +1,4 @@
-export const font = {
+export const typography = {
     headline1: `
         font-size: 36px;
         font-weight: 900;
@@ -51,5 +51,11 @@ export const font = {
         font-size: 12px;
         font-weight: 400;
         line-height: 16px; 
+    `,
+
+    body4: `
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 14px; 
     `
 }
