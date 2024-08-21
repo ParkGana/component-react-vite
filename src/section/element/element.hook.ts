@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ListData } from './element.data'
 
 export function useElement() {
     /* BUTTON 클릭 이벤트 */
@@ -13,6 +14,33 @@ export function useElement() {
     /* CHECK BOX 선택 이벤트 */
     const onCheckOption = (value: string[]) => {
         setChecked(value)
+    }
+
+    /****************************************************************************************************/
+
+    const [nowPage, setNowPage] = useState<number>(1)
+    const [nowGroup, setNowGroup] = useState<number>(1)
+
+    const postCount = 2
+    const pageCount = 5
+    const totalPage = Math.ceil(ListData.length / postCount)
+
+    /* 페이지 변경 이벤트 */
+    const onChangePage = (value: number) => {
+        setNowPage(value)
+
+        if (nowPage < (nowGroup - 1) * pageCount + 1) {
+            setNowGroup(nowGroup - 1)
+        }
+
+        if (nowPage > nowGroup * pageCount) {
+            setNowGroup(nowGroup + 1)
+        }
+    }
+
+    /* 페이지 그룹 변경 이벤트 */
+    const onChangeGroup = (value: number) => {
+        setNowGroup(value)
     }
 
     /****************************************************************************************************/
@@ -45,6 +73,11 @@ export function useElement() {
     return {
         state: {
             checked,
+            postCount,
+            pageCount,
+            totalPage,
+            nowPage,
+            nowGroup,
             choiced,
             keyword,
             selected
@@ -52,6 +85,8 @@ export function useElement() {
         event: {
             onClickButton,
             onCheckOption,
+            onChangePage,
+            onChangeGroup,
             onChoiceOption,
             onChangeKeyword,
             onSelectOption

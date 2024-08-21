@@ -6,6 +6,9 @@ import { SelectBox } from '@/src/component/element/select-box/select-box.view'
 import { CheckBox } from '@/src/component/element/check-box/check-box.view'
 import { Radio } from '@/src/component/element/radio/radio.view'
 import { Search } from '@/src/component/element/search/search.view'
+import { List } from '@/src/component/element/pagination/list/list.view'
+import { Pagination } from '@/src/component/element/pagination/pagination.view'
+import { ListData } from './element.data'
 
 export function ElementSection() {
     const { state, event } = useElement()
@@ -25,6 +28,18 @@ export function ElementSection() {
                         ['check-3', '카라반']
                     ]}
                     checkCallback={event.onCheckOption}
+                />
+            </Item>
+
+            <Item title={'PAGINATION'}>
+                <List postList={ListData} postCount={state.postCount} nowPage={state.nowPage} />
+                <Pagination
+                    pageCount={state.pageCount}
+                    totalPage={state.totalPage}
+                    nowPage={state.nowPage}
+                    nowGroup={state.nowGroup}
+                    clickCallback={event.onChangePage}
+                    changeCallback={event.onChangeGroup}
                 />
             </Item>
 
