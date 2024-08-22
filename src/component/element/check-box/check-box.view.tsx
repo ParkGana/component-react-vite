@@ -10,7 +10,7 @@ export function CheckBox({
     options: Array<string[]>
     checkCallback: (value: string[]) => void
 }) {
-    const { events } = useCheckBox(checked, checkCallback)
+    const { event } = useCheckBox(checked, checkCallback)
 
     return (
         <Container>
@@ -21,7 +21,7 @@ export function CheckBox({
                         id={option[0]}
                         name="checkbox"
                         value={option[1]}
-                        onClick={() => events.onCheckOption(option[1])}
+                        onClick={() => event.onCheckOption(option[1])}
                     />
                     <Box htmlFor={option[0]}></Box>
                     <Text htmlFor={option[0]}>{option[1]}</Text>

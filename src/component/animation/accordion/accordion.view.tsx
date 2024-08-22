@@ -13,20 +13,20 @@ import {
 } from './accordion.style'
 
 export function AccordionHorizontal() {
-    const { refs, events } = useAccordionHorizontal()
+    const { ref, event } = useAccordionHorizontal()
 
     return (
-        <HorizontalContainer ref={refs.containerRef}>
+        <HorizontalContainer ref={ref.containerRef}>
             {[...Array(2)].map((_, index) => (
                 <HorizontalSafetyContainer
                     key={index}
-                    onMouseEnter={() => events.onEnterItem(index)}
-                    onMouseLeave={() => events.onLeaveItem(index)}
+                    onMouseEnter={() => event.onEnterItem(index)}
+                    onMouseLeave={() => event.onLeaveItem(index)}
                 >
                     <HorizontalTitle>Lorem</HorizontalTitle>
                     <HorizontalContentsContainer
                         ref={(element) => {
-                            refs.contentsRef.current[index] = element!
+                            ref.contentsRef.current[index] = element!
                         }}
                     >
                         <HorizontalContentsText>
@@ -40,25 +40,25 @@ export function AccordionHorizontal() {
 }
 
 export function AccordionVertical() {
-    const { refs, events } = useAccordionVertical()
+    const { ref, event } = useAccordionVertical()
 
     return (
         <VerticalContainer>
             {[...Array(2)].map((_, index) => (
                 <VerticalSafetyContainer
                     key={index}
-                    onMouseEnter={() => events.onEnterItem(index)}
-                    onMouseLeave={() => events.onLeaveItem(index)}
+                    onMouseEnter={() => event.onEnterItem(index)}
+                    onMouseLeave={() => event.onLeaveItem(index)}
                 >
                     <VerticalTitle>Lorem</VerticalTitle>
                     <VerticalContentsContainer
                         ref={(element) => {
-                            refs.contentsRef.current[index] = element!
+                            ref.contentsRef.current[index] = element!
                         }}
                     >
                         <VerticalContentsText
                             ref={(element) => {
-                                refs.textRef.current[index] = element!
+                                ref.textRef.current[index] = element!
                             }}
                         >
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit.

@@ -20,7 +20,7 @@ export function usePuzzle() {
     }
 
     return {
-        events: {
+        event: {
             onDragItem,
             onDropItem
         }

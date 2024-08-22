@@ -24,11 +24,11 @@ export function useAccordionHorizontal() {
     }
 
     return {
-        refs: {
+        ref: {
             containerRef,
             contentsRef
         },
-        events: {
+        event: {
             onEnterItem,
             onLeaveItem
         }
@@ -54,11 +54,11 @@ export function useAccordionVertical() {
     }
 
     return {
-        refs: {
+        ref: {
             contentsRef,
             textRef
         },
-        events: {
+        event: {
             onEnterItem,
             onLeaveItem
         }

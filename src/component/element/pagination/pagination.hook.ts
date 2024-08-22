@@ -65,10 +65,10 @@ export function usePagination(
     }
 
     return {
-        states: {
+        state: {
             columnCount
         },
-        events: {
+        event: {
             onClickPrev,
             onClickNext,
             onClickPage

@@ -10,18 +10,18 @@ export function SelectBox({
     options: string[]
     selectCallback: (value: string) => void
 }) {
-    const { states, refs, events } = useSelectBox(selectCallback)
+    const { state, ref, event } = useSelectBox(selectCallback)
 
     return (
-        <Container ref={refs.ref} onClick={events.onToggleSelect}>
+        <Container ref={ref.ref} onClick={event.onToggleSelect}>
             <Selected>{selected}</Selected>
-            <Arrow src={`/icon/select-${states.isOpen ? 'up' : 'down'}.png`} alt="icon" />
-            <OptionContainer isOpen={states.isOpen}>
+            <Arrow src={`/icon/select-${state.isOpen ? 'up' : 'down'}.png`} alt="icon" />
+            <OptionContainer isOpen={state.isOpen}>
                 {options.map((option, index) => (
                     <OptionSafetyContainer
                         key={index}
                         isSelected={selected === option}
-                        onClick={() => events.onSelectOption(option)}
+                        onClick={() => event.onSelectOption(option)}
                     >
                         {option}
                     </OptionSafetyContainer>

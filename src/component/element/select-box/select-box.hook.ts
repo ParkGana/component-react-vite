@@ -31,13 +31,13 @@ export function useSelectBox(selectCallback: (value: string) => void) {
     }
 
     return {
-        states: {
+        state: {
             isOpen
         },
-        refs: {
+        ref: {
             ref
         },
-        events: {
+        event: {
             onToggleSelect,
             onSelectOption
         }

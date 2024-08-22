@@ -19,7 +19,7 @@ export function useSearch(keyword: string, changeCallback: (value: string) => vo
     }
 
     return {
-        events: {
+        event: {
             onChangeKeyword,
             onPressEnter,
             onClickButton

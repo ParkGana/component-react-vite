@@ -1,3 +1,9 @@
+export const CheckBoxData = [
+    ['check-1', '글램핑'],
+    ['check-2', '오토'],
+    ['check-3', '카라반']
+]
+
 export const ListData = [
     ['1', '1번 게시글 제목', 'gana'],
     ['2', '2번 게시글 제목', 'gana'],
@@ -14,4 +20,23 @@ export const ListData = [
     ['13', '13번 게시글 제목', 'gana'],
     ['14', '14번 게시글 제목', 'gana'],
     ['15', '15번 게시글 제목', 'gana']
+]
+
+export const RadioData = [
+    ['radio-1', '글램핑'],
+    ['radio-2', '오토'],
+    ['radio-3', '카라반']
+]
+
+export const SelectBoxData = [
+    '기아 타이거즈',
+    '두산 베어스',
+    '롯데 자이언츠',
+    '삼성 라이온즈',
+    '키움 히어로즈',
+    '한화 이글스',
+    'KT 위즈',
+    'LG 트윈스',
+    'NC 다이노스',
+    'SSG 랜더스'
 ]

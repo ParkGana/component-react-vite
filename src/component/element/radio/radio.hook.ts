@@ -5,7 +5,7 @@ export function useRadio(choiceCallback: (value: string) => void) {
     }
 
     return {
-        events: {
+        event: {
             onChoiceOption
         }
     }

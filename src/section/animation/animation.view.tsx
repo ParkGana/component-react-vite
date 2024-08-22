@@ -4,6 +4,7 @@ import { Puzzle } from '../../component/animation/puzzle/puzzle.view'
 import { SwitchSection } from '../../component/animation/switch-section/switch-section.view'
 import { Category } from '../../component/common/category/category.view'
 import { Item } from '../../component/common/item/item.view'
+import { PuzzleData } from './animation.data'
 
 export function AnimationSection() {
     return (
@@ -18,7 +19,7 @@ export function AnimationSection() {
                 <FollowCursor />
             </Item>
             <Item title={'PUZZLE'}>
-                <Puzzle pieces={['puzzle-2', 'puzzle-4', 'puzzle-1', 'puzzle-3']} />
+                <Puzzle pieces={PuzzleData} />
             </Item>
             <Item title={'SWITCH SECTION'}>
                 <SwitchSection />

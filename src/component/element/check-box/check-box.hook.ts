@@ -13,7 +13,7 @@ export function useCheckBox(checked: string[], checkCallback: (value: string[]) 
     }
 
     return {
-        events: {
+        event: {
             onCheckOption
         }
     }

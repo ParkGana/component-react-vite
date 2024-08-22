@@ -1,4 +1,4 @@
-# setting-react-vite
+# component-react-vite
 
 ---
 
@@ -25,5 +25,9 @@ npm create vite@latest . --template react-ts
 npm install prettier eslint-plugin-prettier eslint-config-prettier  
 npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin  
 npm install styled-components@5.3.5 @types/styled-components
+
+<br />
+
+##### [ Chart.js 설정 ]
 
 npm install chart.js react-chartjs-2

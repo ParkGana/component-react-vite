@@ -8,7 +8,7 @@ export function Radio({
     options: Array<string[]>
     choiceCallback: (value: string) => void
 }) {
-    const { events } = useRadio(choiceCallback)
+    const { event } = useRadio(choiceCallback)
 
     return (
         <Container>
@@ -19,7 +19,7 @@ export function Radio({
                         id={option[0]}
                         name="radio"
                         value={option[1]}
-                        onClick={() => events.onChoiceOption(option[1])}
+                        onClick={() => event.onChoiceOption(option[1])}
                     />
                     <Text htmlFor={option[0]}>{option[1]}</Text>
                 </SafetyContainer>

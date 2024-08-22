@@ -16,18 +16,18 @@ export function Pagination({
     clickCallback: (value: number) => void
     changeCallback: (value: number) => void
 }) {
-    const { states, events } = usePagination(pageCount, totalPage, nowPage, nowGroup, clickCallback, changeCallback)
+    const { state, event } = usePagination(pageCount, totalPage, nowPage, nowGroup, clickCallback, changeCallback)
 
     return (
-        <Container columnCount={states.columnCount}>
-            <Arrow src="/icon/pagination-prev.png" disable={nowPage === 1} onClick={events.onClickPrev} alt="icon" />
+        <Container columnCount={state.columnCount}>
+            <Arrow src="/icon/pagination-prev.png" disable={nowPage === 1} onClick={event.onClickPrev} alt="icon" />
             {[...Array(totalPage)].map((_, index) => (
                 <Page
                     key={index}
                     className="pagination-page"
                     view={index >= (nowGroup - 1) * pageCount && index <= nowGroup * pageCount - 1}
                     now={index + 1 === nowPage}
-                    onClick={() => events.onClickPage(index + 1)}
+                    onClick={() => event.onClickPage(index + 1)}
                 >
                     {index + 1}
                 </Page>
@@ -35,7 +35,7 @@ export function Pagination({
             <Arrow
                 src="/icon/pagination-next.png"
                 disable={nowPage === totalPage}
-                onClick={events.onClickNext}
+                onClick={event.onClickNext}
                 alt="icon"
             />
         </Container>
